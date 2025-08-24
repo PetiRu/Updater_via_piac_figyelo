@@ -24,13 +24,12 @@ def create_shortcut():
         import win32com.client
     except ImportError:
         ensure_module("pythoncom")
-        ensure_module("pywin32")  # win32com benne van
+        ensure_module("pywin32")
 
     login_path = Path(r"C:\Piac_Screener\login.py")
     if not login_path.exists():
         messagebox.showerror("Hiba", f"A login.py fájl nem található itt: {login_path}")
-        root.destroy()
-        sys.exit(1)
+        return
 
     desktop = Path.home() / "Desktop"
     shortcut_path = desktop / "Piac figyelő.lnk"
@@ -47,15 +46,7 @@ def create_shortcut():
     shortcut.save()
 
     status_text.set(f"Parancsikon sikeresen létrehozva: {shortcut_path}")
-    root.update()
-
-    # ----------------- Önmaga törlése -----------------
-    script_path = Path(__file__)
-    try:
-        os.remove(script_path)
-    except Exception as e:
-        messagebox.showwarning("Figyelmeztetés", f"Önmaga törlése sikertelen: {e}")
-    root.destroy()
+    messagebox.showinfo("Kész", f"A parancsikon létrejött: {shortcut_path}")
 
 # ----------------- GUI -----------------
 root = tk.Tk()
