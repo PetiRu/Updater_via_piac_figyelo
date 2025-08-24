@@ -1,33 +1,33 @@
 # Adatok lekérése és feldolgozás
-yfinance==0.2.38
-pandas==2.1.1
-numpy==1.26.2
-requests==2.32.0
-python-dateutil==2.8.2
-pytz==2023.3
+yfinance
+pandas
+numpy
+requests
+python-dateutil
+pytz
 
 # GUI és vizualizáció
-tkinter==0.1.0  # alapból a Python része, de GUI esetén említhető
-ttkbootstrap==1.4.0  # opcionális, modern GUI témákhoz
-matplotlib==3.8.2
-seaborn==0.12.3
+tkinter
+ttkbootstrap
+matplotlib
+seaborn
 
 # Log és színezés
-colorama==1.5.0
-logging==0.5.1.2  # Python standard, de explicit hivatkozható
+colorama
+logging
 
 # Zip és fájlkezelés
-zipfile36==0.1.3
-pathlib==1.0.1  # Python 3.4+ alapból
+zipfile36
+pathlib
 
 # Subprocess és system
-pyinstaller==5.14.1  # EXE készítéshez
-pywin32==305       # Windows subprocess, registry, path handling
+pyinstaller
+pywin32
 
 # Dokumentáció
-reportlab==4.0.0  # PDF generáláshoz a docs_updater-hez
+reportlab
 
 # Extra hasznos
-beautifulsoup4==4.12.2  # ha HTML parsing kell
-lxml==4.9.3            # XML/HTML parsing gyorsabb verzió
-selenium==5.9.0         # ha később web scraping
+beautifulsoup4
+lxml
+selenium
