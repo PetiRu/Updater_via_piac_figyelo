@@ -1,0 +1,31 @@
+//@version=5
+strategy("Stochastic %D Long Only — Buy Only", overlay=false, margin_long=100, process_orders_on_close=true)
+
+// INPUTS
+len       = input.int(14, "Stoch length", minval=1)
+k_smooth  = input.int(4, "K smooth", minval=1)
+d_smooth  = input.int(3, "D smooth", minval=1)
+lvl_low   = input.int(16, "Buy level", minval=0, maxval=100)
+
+// --- STOCHASTIC %D ---
+highestH = ta.highest(high, len)
+lowestL  = ta.lowest(low, len)
+rawK     = (highestH - lowestL == 0) ? 50.0 : 100 * (close - lowestL) / (highestH - lowestL)
+Ks       = ta.sma(rawK, k_smooth)
+Ds       = ta.sma(Ks, d_smooth)   // csak %D számít
+
+// --- JELEK ---
+buySignal = ta.crossover(Ds, lvl_low)   // %D felfelé tör a buy szint felett → BUY
+
+// --- STRATÉGIA ---
+// ha új buy jel jön → előző zárása, új nyitása
+if buySignal
+    strategy.close("Long")
+    strategy.entry("Long", strategy.long)
+
+// --- PLOTS ---
+plot(Ds, title="%D Histogram", style=plot.style_histogram, color=color.new(color.blue, 0))
+hline(lvl_low, "Buy level", color=color.green, linestyle=hline.style_solid, linewidth = 2)
+hline(84, "Sell level", color=color.red, linewidth = 2, linestyle =hline.style_solid)
+// --- PLOTSHAPE ---
+plotshape(buySignal, title="[Találat]", location=location.bottom, style=shape.labelup, color=color.new(#00FFFF, 0), text="[Találat]")
