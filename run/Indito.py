@@ -10,6 +10,6 @@ if login_path.exists():
     # Futtatás Python interpreterrel
     subprocess.run([sys.executable, str(login_path)])
 else:
-    print(f"A login.py fájl nem található itt: {login_path}")
+    print(f"A login.py fajl nem található itt: {login_path}")
     input("Nyomj Entert a kilépéshez...")
 
