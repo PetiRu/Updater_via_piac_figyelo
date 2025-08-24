@@ -13,7 +13,6 @@ seaborn
 
 # Log és színezés
 colorama
-logging
 
 # Zip és fájlkezelés
 zipfile36
