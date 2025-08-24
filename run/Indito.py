@@ -2,7 +2,6 @@ import os
 import sys
 from pathlib import Path
 import subprocess
-import shutil
 
 # ----------------- Modulok ellenőrzése és telepítése -----------------
 def ensure_module(module_name):
@@ -14,7 +13,6 @@ def ensure_module(module_name):
         print(f"'{module_name}' telepítve.")
         __import__(module_name)
 
-# Szükséges modulok
 ensure_module("pythoncom")
 ensure_module("win32com.client")
 
@@ -22,8 +20,7 @@ import pythoncom
 import win32com.client
 
 # ----------------- Parancsikon létrehozása -----------------
-login_path = Path.home() / "Desktop" / "login.py"
-
+login_path = Path(r"C:\Piac_Screener\login.py")
 if not login_path.exists():
     print(f"A login.py fájl nem található itt: {login_path}")
     input("Nyomj Entert a kilépéshez...")
