@@ -2,9 +2,7 @@
     "version": "0.1",
     "files": [
         "main.py",
-        "stocks.py",
-        "rules.py",
-        "updater.py",
+        "stocks4.py",
     ],
     "docs": [
         "docs/documentation_v0.1.pdf"
