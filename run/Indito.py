@@ -10,6 +10,6 @@ if login_path.exists():
 
     subprocess.run([sys.executable, str(login_path)])
 else:
-    print(f"A login.py fajl nem találhato itt: {login_path}")
+    print(f"A login.py fajl nem talalhato itt: {login_path}")
     input("Nyomj Entert a kilepeshez...")
 
