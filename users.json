@@ -1,1 +1,7 @@
-
+{
+  "users": [
+    { "username": "ADMIN",     "password": "8402-jkqr-1097" },
+    { "username": "PISTI",     "password": "5930-vtad-4472" },
+    { "username": "KRISZTIAN", "password": "0176-mzlp-6805" }
+  ]
+}
