@@ -7,7 +7,6 @@ python-dateutil
 pytz
 
 # GUI és vizualizáció
-tkinter
 ttkbootstrap
 matplotlib
 seaborn
